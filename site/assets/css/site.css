@@ -71,7 +71,7 @@ h1 .strike::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height
 .textlink{font-weight:700;font-size:14px;text-underline-offset:4px}
 
 .stage{position:relative;min-height:560px}
-.block{position:absolute;left:14%;top:0;bottom:0;width:58%;background:var(--accent);border-radius:34px;overflow:hidden}
+.block{position:absolute;left:14%;top:0;bottom:0;width:58%;background:var(--ink);border-radius:34px;overflow:hidden}
 .block::before{content:"";position:absolute;inset:auto -30% -40% -30%;height:70%;background:radial-gradient(closest-side,rgba(255,255,255,.28),transparent)}
 .book{position:absolute;left:30%;top:5%;width:min(232px,42%);transform:perspective(1200px) rotateY(-16deg) rotateZ(-2deg);
   border-radius:3px 9px 9px 3px;box-shadow:-24px 34px 60px rgba(0,0,0,.35);transition:transform .5s}
