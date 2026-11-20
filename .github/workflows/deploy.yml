@@ -29,7 +29,9 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: ./site/
-          server-dir: /html/verbietenreichtnicht/
+          # Der FTP-Benutzer startet bereits in /html/verbietenreichtnicht/,
+          # deshalb wird relativ zu seinem Anmeldeverzeichnis hochgeladen.
+          server-dir: ./
           exclude: |
             **/.git*
             **/.git*/**
