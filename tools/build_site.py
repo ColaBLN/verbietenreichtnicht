@@ -96,7 +96,8 @@ def page(path, title, desc, body, depth, active, extra_head=""):
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="{up}assets/css/site.css">
-<link rel="preload" href="{up}assets/fonts/fraunces-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{up}assets/fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{up}assets/fonts/fraunces-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{up}assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 {extra_head}</head>
 <body>
