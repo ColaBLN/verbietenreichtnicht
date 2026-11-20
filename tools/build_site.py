@@ -62,7 +62,8 @@ Options -Indexes
 """
 
 PH = '<span class="ph">%s</span>'
-MAIL = PH % "[kontakt@verbietenreichtnicht.de]"
+MAIL = ('<a href="mailto:kontakt@verbietenreichtnicht.de">'
+        'kontakt@verbietenreichtnicht.de</a>')
 PREIS_TB = PH % "[0,00 €]"
 PREIS_EB = "19,95 €"
 # Kein Platzhalter-Markup: dieser Wert landet in einem href-Attribut.
