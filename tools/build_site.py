@@ -65,7 +65,8 @@ PH = '<span class="ph">%s</span>'
 MAIL = PH % "[kontakt@verbietenreichtnicht.de]"
 PREIS_TB = PH % "[0,00 €]"
 PREIS_EB = "19,95 €"
-AMAZON = PH % "#"
+# Kein Platzhalter-Markup: dieser Wert landet in einem href-Attribut.
+AMAZON = "#"
 AMAZON_EB = "https://www.amazon.de/dp/B0HSCFY8J3"
 DATUM = PH % "[TT.MM.2026]"
 
