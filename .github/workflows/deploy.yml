@@ -32,6 +32,11 @@ jobs:
           # Der FTP-Benutzer startet bereits in /html/verbietenreichtnicht/,
           # deshalb wird relativ zu seinem Anmeldeverzeichnis hochgeladen.
           server-dir: ./
+          # Ohne diese Zeilen laedt die Aktion keine Dateien mit fuehrendem
+          # Punkt hoch - die .htaccess bliebe sonst liegen.
+          include: |
+            **/*
+            **/.htaccess
           exclude: |
             **/.git*
             **/.git*/**
