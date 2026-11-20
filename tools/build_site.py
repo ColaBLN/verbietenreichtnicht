@@ -64,8 +64,9 @@ Options -Indexes
 PH = '<span class="ph">%s</span>'
 MAIL = PH % "[kontakt@verbietenreichtnicht.de]"
 PREIS_TB = PH % "[0,00 €]"
-PREIS_EB = PH % "[0,00 €]"
+PREIS_EB = "19,95 €"
 AMAZON = PH % "#"
+AMAZON_EB = "https://www.amazon.de/dp/B0HSCFY8J3"
 DATUM = PH % "[TT.MM.2026]"
 
 
@@ -234,7 +235,7 @@ START = f"""
       <blockquote>Ein Buch, das keine Angst macht, sondern Mut. Denn Wissen gibt Sicherheit.</blockquote>
       <figcaption>Aus dem Vorwort</figcaption>
       <div class="acts">
-        <a class="btn btn-ghost" href="{AMAZON}">Leseprobe bei Amazon ↗</a>
+        <a class="btn btn-ghost" href="{AMAZON_EB}">Leseprobe bei Amazon ↗</a>
       </div>
     </figure>
     <div class="quotes">
@@ -277,7 +278,7 @@ START = f"""
         <p class="kicker">Kindle</p>
         <div class="p">{PREIS_EB}</div>
         <p>Für Kindle-Geräte und die Kindle-App. Schriftgröße frei wählbar.</p>
-        <div class="acts"><a class="btn btn-dark" href="{AMAZON}">E-Book kaufen</a></div>
+        <div class="acts"><a class="btn btn-dark" href="{AMAZON_EB}">E-Book kaufen</a></div>
         <span class="note">Sofort verfügbar</span>
       </div>
       <div class="card">
