@@ -67,4 +67,12 @@ jobs:
           echo "== Liegt die .htaccess auf dem Server? =="
           curl -s -o /dev/null -w '%{http_code}\n' https://verbietenreichtnicht.de/.htaccess
 
+          echo "== Ist live genau das, was im Repository steht? =="
+          for p in index.html material/index.html assets/css/site.css; do
+            url="https://verbietenreichtnicht.de/${p%index.html}"
+            live=$(curl -s -H 'Cache-Control: no-cache' "$url?nocache=$GITHUB_RUN_ID" | sha256sum | cut -c1-12)
+            repo=$(sha256sum "site/$p" | cut -c1-12)
+            if [ "$live" = "$repo" ]; then echo "gleich      /$p"; else echo "ABWEICHUNG  /$p  live=$live repo=$repo"; fail=1; fi
+          done
+
           exit $fail
