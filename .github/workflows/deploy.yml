@@ -32,12 +32,39 @@ jobs:
           # Der FTP-Benutzer startet bereits in /html/verbietenreichtnicht/,
           # deshalb wird relativ zu seinem Anmeldeverzeichnis hochgeladen.
           server-dir: ./
-          # Ohne diese Zeilen laedt die Aktion keine Dateien mit fuehrendem
-          # Punkt hoch - die .htaccess bliebe sonst liegen.
-          include: |
-            **/*
-            **/.htaccess
           exclude: |
             **/.git*
             **/.git*/**
             **/.DS_Store
+
+      # Prueft nach jedem Upload von aussen, ob die Seite wirklich laeuft.
+      # curl bricht bei ungueltigem Zertifikat ab, damit ist auch das
+      # Zertifikat fuer beide Adressen mitgeprueft.
+      - name: Live-Pruefung
+        run: |
+          sleep 5
+          fail=0
+          echo "== Seiten =="
+          for p in / material/ vortraege/ ueber-mich/ impressum/ datenschutz/ \
+                   pdf/Unser_Mediennutzungsvertrag.pdf pdf/Unsere_Klassenchat-Regeln.pdf \
+                   pdf/Elternbrief_zur_Handyregel.pdf assets/css/site.css \
+                   sitemap.xml robots.txt; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "https://verbietenreichtnicht.de/$p")
+            echo "$code  /$p"
+            [ "$code" = "200" ] || fail=1
+          done
+
+          echo "== Zertifikat und Weiterleitungen =="
+          for u in https://verbietenreichtnicht.de/ https://www.verbietenreichtnicht.de/ \
+                   http://verbietenreichtnicht.de/ http://www.verbietenreichtnicht.de/; do
+            out=$(curl -s -o /dev/null -w '%{http_code} -> %{redirect_url}' "$u") || out="FEHLER (Zertifikat oder Verbindung)"
+            echo "$u  $out"
+          done
+
+          echo "== Kopfzeilen der Startseite =="
+          curl -sI https://verbietenreichtnicht.de/ | grep -iE '^(cache-control|expires|x-content-type|referrer-policy|x-frame)' || echo "keine .htaccess-Kopfzeilen gefunden"
+
+          echo "== Liegt die .htaccess auf dem Server? =="
+          curl -s -o /dev/null -w '%{http_code}\n' https://verbietenreichtnicht.de/.htaccess
+
+          exit $fail
