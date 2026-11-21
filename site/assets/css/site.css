@@ -143,7 +143,6 @@ h3{font-family:var(--sans);font-weight:700;font-size:21px;letter-spacing:-.01em;
 
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
 .card{border:1px solid var(--line);border-radius:var(--r-md);padding:28px;display:flex;flex-direction:column;gap:12px}
-.card.main{border:1.5px solid var(--ink);background:color-mix(in srgb,var(--accent) 7%,var(--sheet))}
 .card h3{margin:0}
 .card p{margin:0;font-size:15px;color:var(--ink-soft)}
 .card .p{font-family:var(--sans);font-size:38px;font-weight:700;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}
@@ -224,7 +223,7 @@ footer.main a:hover{color:var(--accent-text)}
 
 .fit{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px}
 .fit>div{border-radius:var(--r-md);padding:30px}
-.fit .yes{background:color-mix(in srgb,var(--accent) 6%,var(--sheet));border:1.5px solid var(--ink)}
+.fit .yes{background:#faf2f1;background:color-mix(in srgb,var(--accent) 6%,var(--sheet));border:1.5px solid var(--ink)}
 .fit .no{border:1px solid var(--line)}
 .fit h3{font-size:18px;margin-bottom:16px}
 .fit ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
@@ -253,13 +252,40 @@ footer.main a:hover{color:var(--accent-text)}
 
 /* ---- Fotos ---- */
 .photo-band{margin:0 0 clamp(36px,5vw,64px);padding:0 clamp(18px,4vw,48px)}
-.photo-band img,.photo-tall img{display:block;width:100%;height:auto;border-radius:var(--r-lg);background:var(--hero-bot)}
-.photo-band figcaption,.photo-tall figcaption{margin-top:8px;font-size:11.5px;color:var(--muted);text-align:right}
-.instant{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,5vw,72px);align-items:center}
-.photo-tall{margin:0;max-width:480px}
-.instant .acts{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:26px}
-.instant .textlink{font-family:var(--sans);font-size:14px}
-@media (max-width:760px){.instant{grid-template-columns:1fr}.photo-tall{max-width:none}}
+.photo-band img{display:block;width:100%;height:auto;border-radius:var(--r-lg);background:var(--hero-bot)}
+.photo-band figcaption{margin-top:8px;font-size:11.5px;color:var(--muted);text-align:right}
+
+/* ---- Hauptangebot im Kaufbereich ---- */
+.offer{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,64px);align-items:center;
+  margin-top:40px;padding:clamp(28px,4vw,52px);border:1.5px solid var(--ink);border-radius:var(--r-lg);
+  background:#faf2f1;background:color-mix(in srgb,var(--accent) 6%,var(--sheet))}
+.offer-img{margin:0;display:flex;flex-direction:column;align-items:center}
+.offer-img img{display:block;width:100%;max-width:330px;height:auto;filter:drop-shadow(0 26px 28px rgba(0,0,0,.22))}
+.offer-img figcaption{margin-top:14px;font-size:11.5px;color:var(--muted)}
+.offer .kicker{font-size:14px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin:0}
+.offer .p{font-size:clamp(44px,5vw,60px);font-weight:700;letter-spacing:-.03em;line-height:1;margin-top:12px;font-variant-numeric:tabular-nums}
+.offer-points{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px;max-width:52ch}
+.offer-points li{position:relative;padding-left:30px;font-family:var(--serif);font-size:18px;line-height:1.45;color:var(--ink-soft)}
+.offer-points li::before{content:"";position:absolute;left:3px;top:.42em;width:12px;height:7px;border-left:2.5px solid var(--accent);
+  border-bottom:2.5px solid var(--accent);transform:rotate(-45deg)}
+.offer .acts{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:30px}
+.offer .textlink{font-size:14px}
+.offer .note{margin:16px 0 0;font-size:13px;color:var(--muted)}
+.cards-2{grid-template-columns:1fr 1fr;margin-top:18px}
+@media (max-width:760px){
+  .offer{grid-template-columns:1fr;text-align:left}
+  .offer-img img{max-width:230px}
+  .cards-2{grid-template-columns:1fr}
+}
+
+/* ---- Verweis aufs Buch auf Unterseiten ---- */
+.upsell{display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.upsell-cover img{display:block;width:100%;height:auto;border-radius:3px 9px 9px 3px;box-shadow:0 24px 50px rgba(0,0,0,.20);
+  transition:transform .25s}
+.upsell-cover:hover img{transform:translateY(-4px)}
+.upsell .acts{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:26px}
+.upsell .textlink{font-family:var(--sans);font-size:14px}
+@media (max-width:760px){.upsell{grid-template-columns:1fr}.upsell-cover img{max-width:170px}}
 
 /* Ueberzeilen und Textlinks behalten ihre Gestalt auch innerhalb von Lesetext-Bloecken */
 .prose p.eyebrow,.voices p.eyebrow{font-family:var(--sans);font-size:12px;line-height:1.6;color:var(--accent-text);margin:0 0 16px;max-width:none}
@@ -275,7 +301,7 @@ footer.main a:hover{color:var(--accent-text)}
   .buybar span{font-size:14px}
   .buybar b{margin-right:6px}
   .buybar .btn{padding:11px 18px;white-space:nowrap}
-  footer.main{padding-bottom:90px}
+  body:has(.buybar) footer.main{padding-bottom:90px}
   .pages{grid-template-columns:1fr 1fr;gap:18px}
   .toc,.fit,.voices{grid-template-columns:1fr}
 }

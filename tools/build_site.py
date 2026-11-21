@@ -397,41 +397,35 @@ START = f"""
     </div>
   </section>
 
-  <section class="s" id="sofort">
-    <div class="instant">
-      <figure class="photo-tall">
-        <img src="assets/img/kindle-1000.jpg" srcset="assets/img/kindle-600.jpg 600w, assets/img/kindle-1000.jpg 1000w"
-          sizes="(max-width:760px) 100vw, 480px" width="1000" height="1339" loading="lazy"
-          alt="Hände halten einen Kindle mit dem Cover von „Verbieten reicht nicht“, im Hintergrund ein Sofa">
-        <figcaption>Symbolbild, KI-generiert</figcaption>
-      </figure>
-      <div class="prose">
-        <p class="eyebrow">Sofort lesen</p>
-        <h2>Heute Abend anfangen.</h2>
-        <p class="big">Das E-Book ist in Sekunden auf Ihrem Gerät – heute Abend auf dem Sofa,
-        morgen in der Mittagspause.</p>
-        <p>Ein Kindle ist dafür nicht nötig. Die kostenlose Kindle-App genügt, für Smartphone,
-        Tablet und Computer. Schriftgröße und Helligkeit stellen Sie selbst ein.</p>
-        <div class="acts">
-          <a class="btn btn-accent btn-lg" href="{AMAZON_EB}">E-Book kaufen · {PREIS_EB}</a>
-          <a class="textlink" href="{AMAZON_EB}">Erst reinlesen ↗</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="s" id="kaufen">
     <p class="eyebrow">Jetzt bestellen</p>
-    <h2>Wählen Sie Ihre Ausgabe.</h2>
-    <div class="cards">
-      <div class="card main">
-        <p class="kicker">Kindle-Ausgabe</p>
+    <h2>Heute Abend anfangen.</h2>
+    <div class="offer">
+      <figure class="offer-img">
+        <picture>
+          <source type="image/webp" sizes="(max-width:760px) 60vw, 340px"
+            srcset="assets/img/kindle-produkt-400.webp 400w, assets/img/kindle-produkt-720.webp 720w">
+          <img src="assets/img/kindle-produkt-400.png" width="400" height="553" loading="lazy"
+            alt="Die Kindle-Ausgabe von „Verbieten reicht nicht“ auf einem E-Book-Reader">
+        </picture>
+        <figcaption>Symbolbild, KI-generiert</figcaption>
+      </figure>
+      <div class="offer-body">
+        <p class="kicker">Kindle-Ausgabe · sofort verfügbar</p>
         <div class="p">{PREIS_EB}</div>
-        <p>Sofort lesen auf dem Kindle oder in der Kindle-App für Smartphone, Tablet und Computer.
-        Schriftgröße frei wählbar.</p>
-        <div class="acts"><a class="btn btn-accent" href="{AMAZON_EB}">Bei Amazon kaufen</a></div>
-        <span class="note">Sofort verfügbar</span>
+        <ul class="offer-points">
+          <li>In Sekunden auf Ihrem Gerät – heute Abend auf dem Sofa, morgen in der Mittagspause.</li>
+          <li>Kein Kindle nötig: Die kostenlose Kindle-App läuft auf Smartphone, Tablet und Computer.</li>
+          <li>Schriftgröße und Helligkeit stellen Sie selbst ein.</li>
+        </ul>
+        <div class="acts">
+          <a class="btn btn-accent btn-lg" href="{AMAZON_EB}">Bei Amazon kaufen</a>
+          <a class="textlink" href="{AMAZON_EB}">Erst reinlesen ↗</a>
+        </div>
+        <p class="note">Kauf und Lieferung laufen über Amazon.</p>
       </div>
+    </div>
+    <div class="cards cards-2">
       <div class="card">
         <p class="kicker">Taschenbuch</p>
         <div class="p soon-p">In Kürze</div>
@@ -558,23 +552,28 @@ MATERIAL = """
 """ for t, f, d, n in VORLAGEN) + """    </div>
   </section>
   <section class="s">
-    <div class="split">
-      <div>
+    <div class="upsell">
+      <a class="upsell-cover" href="/"><img src="../assets/img/cover.jpg" width="560" height="784" loading="lazy"
+        alt="Buchcover: Verbieten reicht nicht – Handy weg, und dann?"></a>
+      <div class="prose">
         <p class="eyebrow">Und im Buch</p>
         <h2>Zwölf Projekte für Klassenzimmer und Küchentisch.</h2>
-      </div>
-      <div class="prose">
         <p class="big">Die Kopiervorlagen sind der Anhang. Der praktische Teil des Buches sind
         zwölf ausgearbeitete Projekte für die Klassen 1 bis 6.</p>
         <p>Jedes mit Zeitplan, Materialliste, Lernziel und zwei Reflexionsfragen für die Kinder:
         von der Geräuschejagd im Schulhaus über die Werbedetektive bis zu der Frage, warum eine
         KI sich irrt. Zugeordnet zum Berliner Basiscurriculum Medienbildung und zu den
         Kompetenzbereichen der Kultusministerkonferenz.</p>
-        <p><a class="btn btn-dark" href="/#kaufen">Buch bestellen</a></p>
+        <div class="acts">
+          <a class="btn btn-accent btn-lg" href="@@AMAZON_EB@@">E-Book kaufen · @@PREIS_EB@@</a>
+          <a class="textlink" href="/">Mehr über das Buch</a>
+        </div>
       </div>
     </div>
   </section>
 """
+
+MATERIAL = MATERIAL.replace("@@AMAZON_EB@@", AMAZON_EB).replace("@@PREIS_EB@@", PREIS_EB)
 
 # ---------------------------------------------------------------- Vorträge
 VORTRAEGE = f"""
@@ -693,6 +692,24 @@ UEBER = f"""
         <p>Rezensionsexemplare, Interviews und Bildmaterial auf Anfrage. Die Übersicht über die
         Handyregeln und die Verankerung von Medienbildung in allen 16 Bundesländern (Stand
         Oktober 2026) stelle ich Redaktionen gern zur Verfügung.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="s">
+    <div class="upsell">
+      <a class="upsell-cover" href="/"><img src="../assets/img/cover.jpg" width="560" height="784" loading="lazy"
+        alt="Buchcover: Verbieten reicht nicht – Handy weg, und dann?"></a>
+      <div class="prose">
+        <p class="eyebrow">Das Buch</p>
+        <h2>Verbieten reicht nicht.</h2>
+        <p class="big">Für Eltern und Lehrkräfte von Grundschulkindern, die mehr wollen als Verbote:
+        was Kinder wirklich mit Medien tun, was Handyverbote leisten – und zwölf Projekte für
+        Klassenzimmer und Küchentisch.</p>
+        <div class="acts">
+          <a class="btn btn-accent btn-lg" href="{AMAZON_EB}">E-Book kaufen · {PREIS_EB}</a>
+          <a class="textlink" href="/">Mehr über das Buch</a>
+        </div>
       </div>
     </div>
   </section>
