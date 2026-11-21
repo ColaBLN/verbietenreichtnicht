@@ -164,7 +164,7 @@ START = f"""
   <header class="hero" id="top">
     <div class="hero-text">
       <p class="eyebrow">Neu erschienen · Sebastian Klatt</p>
-      <h1><span class="strike">Verbieten</span><br>reicht nicht</h1>
+      <h1>Verbieten<br>reicht nicht</h1>
       <p class="subtitle">Handy weg – und dann?</p>
       <p class="hook">„Nur noch fünf Minuten.“ Dann die Tränen, dann die Tür. Und hinterher die Frage,
       die bleibt: War das jetzt richtig?</p>

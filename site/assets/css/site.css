@@ -56,9 +56,6 @@ nav.main{display:flex;align-items:center;gap:24px;padding:10px clamp(8px,3vw,48p
   padding:clamp(28px,6vw,80px) clamp(20px,5vw,72px);display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
 .hero>*{min-width:0}
 h1{font-family:var(--sans);font-weight:700;font-size:clamp(44px,7vw,96px);line-height:.95;letter-spacing:-.04em;margin:6px 0 10px;text-wrap:balance}
-h1 .strike{position:relative;display:inline-block}
-h1 .strike::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:.075em;background:var(--accent);transform:rotate(-3deg);border-radius:4px;animation:strike .9s .3s cubic-bezier(.6,0,.2,1) both;transform-origin:left}
-@keyframes strike{from{transform:rotate(-3deg) scaleX(0)}to{transform:rotate(-3deg) scaleX(1)}}
 .subtitle{font-family:var(--serif);font-style:italic;font-size:clamp(21px,2.5vw,32px);font-weight:400;color:var(--accent-text);margin:0 0 26px;letter-spacing:-.01em}
 .hook{font-family:var(--serif);font-size:clamp(19px,1.9vw,23px);line-height:1.5;margin:0;max-width:34ch;color:var(--ink)}
 .for{margin:18px 0 0;font-size:15px;font-weight:600;color:var(--ink-soft);max-width:40ch}
