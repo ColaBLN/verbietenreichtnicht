@@ -95,6 +95,9 @@ BOOK_LD = '<script type="application/ld+json">' + _json.dumps({
 }, ensure_ascii=False) + '</script>\n'
 
 
+# Eigenes Vorschaubild je Seite, wenn der Link geteilt wird
+OG_IMAGE = {"material/index.html": "vorschau-material.jpg"}
+
 def page(path, title, desc, body, depth, active, extra_head=""):
     up = "../" * depth
     links = "".join(
@@ -114,7 +117,7 @@ def page(path, title, desc, body, depth, active, extra_head=""):
 <meta property="og:title" content="{html.escape(title, quote=True)}">
 <meta property="og:description" content="{html.escape(desc, quote=True)}">
 <meta property="og:url" content="{DOMAIN}{active if active != '/' else '/'}">
-<meta property="og:image" content="{DOMAIN}/assets/img/vorschau.jpg">
+<meta property="og:image" content="{DOMAIN}/assets/img/{OG_IMAGE.get(path, "vorschau.jpg")}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
