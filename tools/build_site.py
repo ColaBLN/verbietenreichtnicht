@@ -161,60 +161,23 @@ def page(path, title, desc, body, depth, active, extra_head=""):
 # ---------------------------------------------------------------- Startseite
 START = f"""
   <header class="hero" id="top">
-    <div>
-      <div class="badge">
-        <div class="q" aria-hidden="true">&bdquo;</div>
-        <div><b>Neu erschienen · Band 1</b>
-          <span>von Sebastian Klatt · <a href="{AMAZON_EB}">Leseprobe lesen ↗</a></span></div>
-      </div>
+    <div class="hero-text">
+      <p class="eyebrow">Neu erschienen · Sebastian Klatt</p>
       <h1><span class="strike">Verbieten</span><br>reicht nicht</h1>
       <p class="subtitle">Handy weg – und dann?</p>
-      <div class="lede">
-        <p>„Nur noch fünf Minuten.“ Dann die Tränen, dann die Tür. Und hinterher die Frage,
-        die bleibt: War das jetzt richtig?</p>
-        <div class="meta">
-          <span><b>Der Wegweiser für Eltern und Lehrkräfte</b> von Kindern zwischen 6 und 12</span>
-        </div>
-      </div>
+      <p class="hook">„Nur noch fünf Minuten.“ Dann die Tränen, dann die Tür. Und hinterher die Frage,
+      die bleibt: War das jetzt richtig?</p>
+      <p class="for">Der Wegweiser für Eltern und Lehrkräfte von Kindern zwischen 6 und 12.</p>
       <div class="hero-ctas">
         <a class="btn btn-accent btn-lg" href="{AMAZON_EB}">E-Book kaufen · {PREIS_EB}</a>
         <a class="textlink" href="/material/">3 Kopiervorlagen gratis</a>
       </div>
-      <ul class="assure">
-        <li><i>{CHECK}</i>Sofort lesen – auf Kindle, Smartphone oder Tablet</li>
-        <li><i>{CHECK}</i>111 Quellen, Stand Oktober 2026</li>
-      </ul>
     </div>
-    <div class="stage" aria-label="Buchcover und Eckdaten">
-      <div class="block" aria-hidden="true"></div>
-      <div class="book"><img src="assets/img/cover.jpg" width="560" height="784"
-        alt="Buchcover: Verbieten reicht nicht – Handy weg, und dann?"></div>
-      <div class="chip c1"><i>{CHECK}</i>Zwölf Projekte zum Nachmachen</div>
-      <div class="chip c2"><i>{CHECK}</i>16 Bundesländer im Vergleich</div>
-      <div class="glass stat">
-        <div class="k">— Eigenes Smartphone</div>
-        <div class="v">63&thinsp;%</div>
-        <div class="d">der Zehn- bis Elf&shy;jährigen. Der Sprung passiert in der Grundschule.</div>
-        <div class="src">KIM-Studie 2024</div>
-      </div>
-      <div class="glass price">
-        <div class="fmt">Kindle-Ausgabe · sofort lesbar</div>
-        <div class="p">{PREIS_EB}</div>
-        <a class="btn btn-accent" href="{AMAZON_EB}">Bei Amazon kaufen</a>
-        <div class="soon">Taschenbuch erscheint in Kürze</div>
-      </div>
+    <div class="hero-cover">
+      <img src="assets/img/cover.jpg" width="560" height="784"
+        alt="Buchcover: Verbieten reicht nicht – Handy weg, und dann?">
     </div>
   </header>
-
-  <div class="facts">
-    <span class="lbl">Auf einen Blick</span>
-    <span class="f">200 Seiten</span>
-    <span class="f">17 Kapitel</span>
-    <span class="f">12 Projekte</span>
-    <span class="f">21 Grafiken</span>
-    <span class="f">111 Quellen</span>
-    <span class="f">3 Kopiervorlagen</span>
-  </div>
 
   <section class="s" id="buch">
     <div class="split">
@@ -223,37 +186,20 @@ START = f"""
         <h2>Handy weg ist schnell gesagt. Aber was kommt danach?</h2>
       </div>
       <div class="prose">
-        <p class="big">Dieses Buch ist für Eltern und Lehrkräfte, die mehr wollen als Verbote –
-        und die keine Zeit haben für Patentrezepte, die im Alltag nicht funktionieren.</p>
-        <p>Es zeigt, was Kinder zwischen sechs und zwölf Jahren wirklich mit Medien tun. Nicht,
-        was wir vermuten. Es zeigt, was Handyverbote leisten und wo sie aufhören zu wirken –
-        in Europa und in allen 16 Bundesländern. Und es zeigt, wie aus einem Verbot Begleitung
-        wird: mit zwölf Projekten für Klassenzimmer und Küchentisch.</p>
+        <p class="big">Für Eltern und Lehrkräfte, die mehr wollen als Verbote – und keine Zeit haben
+        für Patentrezepte, die im Alltag nicht funktionieren.</p>
+        <p>Das Buch zeigt, was Kinder zwischen sechs und zwölf wirklich mit Medien tun, was
+        Handyverbote leisten und wo sie aufhören zu wirken. Und es zeigt, wie aus einem Verbot
+        Begleitung wird: mit zwölf Projekten für Klassenzimmer und Küchentisch.</p>
       </div>
     </div>
-    <div class="theses">
-      <div class="thesis"><h3>Verbote schaffen Ruhe</h3><p>Sie sind sinnvoll, und sie geben
-      Grundschulkindern Zeit. Aber sie erklären nicht, warum die Grenze gilt.</p></div>
-      <div class="thesis"><h3>Wissen gibt Sicherheit</h3><p>Wer versteht, wie Medien funktionieren,
-      entscheidet auf der Grundlage von Fakten – auch dann, wenn niemand hinschaut.</p></div>
-      <div class="thesis"><h3>Begleitung statt Angst</h3><p>Kinder lernen den Umgang mit Medien
-      nicht von allein. Sie lernen ihn an der Seite von Erwachsenen.</p></div>
-    </div>
   </section>
-
-  <figure class="photo-band">
-    <img src="assets/img/park-1600.jpg" srcset="assets/img/park-900.jpg 900w, assets/img/park-1600.jpg 1600w"
-      sizes="(max-width:760px) 100vw, 1200px" width="1600" height="893" loading="lazy"
-      alt="Das Buch lehnt an einer Parkbank, im Hintergrund spielen Kinder mit einer Erwachsenen">
-    <figcaption>Symbolbild, KI-generiert</figcaption>
-  </figure>
 
   <section class="s" id="inhalt-buch">
     <div class="split">
       <div>
         <p class="eyebrow">Was Sie mitnehmen</p>
         <h2>Vier Fragen, auf die das Buch antwortet.</h2>
-        <a class="btn btn-accent" href="{AMAZON_EB}">E-Book kaufen · {PREIS_EB}</a>
       </div>
       <ul class="learn">
         <li><span class="x">{CHECK}</span><div><b>Was machen Grundschulkinder wirklich mit Medien?</b>
@@ -269,88 +215,23 @@ START = f"""
   </section>
 
   <section class="s" id="blick">
-    <div class="sec-head">
-      <div>
-        <p class="eyebrow">Blick ins Buch</p>
-        <h2>Sehen Sie selbst, was Sie bekommen.</h2>
-      </div>
-      <p>Vier Originalseiten, unverändert aus dem Buch. Antippen zum Vergrößern.</p>
-    </div>
+    <p class="eyebrow">Blick ins Buch</p>
+    <h2>Sehen Sie selbst, was Sie bekommen.</h2>
     <div class="pages">
       <a class="pg" href="assets/img/buch/seite-5.jpg"><img src="assets/img/buch/seite-5-klein.jpg"
         width="520" height="728" loading="lazy" alt="Buchseite 5: Inhaltsverzeichnis">
-        <span><b>Das Inhaltsverzeichnis</b>17 Kapitel in sechs Teilen – vom Warum bis zur Hilfe im Ernstfall.</span></a>
+        <span><b>Das Inhaltsverzeichnis</b>17 Kapitel in sechs Teilen.</span></a>
       <a class="pg" href="assets/img/buch/seite-53.jpg"><img src="assets/img/buch/seite-53-klein.jpg"
         width="520" height="728" loading="lazy" alt="Buchseite 53: Zeitstrahl der Handyregeln in Europa und Grafik zum Smartphonebesitz nach Alter">
-        <span><b>Zahlen statt Bauchgefühl</b>Grafiken und Ländervergleiche, belegt mit Quellen.</span></a>
+        <span><b>Zahlen statt Bauchgefühl</b>Grafiken, belegt mit Quellen.</span></a>
       <a class="pg" href="assets/img/buch/seite-135.jpg"><img src="assets/img/buch/seite-135-klein.jpg"
         width="520" height="728" loading="lazy" alt="Buchseite 135: Beginn der zwölf Projekte zum Nachmachen">
-        <span><b>Zwölf Projekte</b>Jedes mit Klasse, Dauer, Fächern, Lernziel und Material.</span></a>
+        <span><b>Zwölf Projekte</b>Mit Klasse, Dauer und Material.</span></a>
       <a class="pg" href="assets/img/buch/seite-170.jpg"><img src="assets/img/buch/seite-170-klein.jpg"
         width="520" height="728" loading="lazy" alt="Buchseite 170: Grundregeln für den Ernstfall">
-        <span><b>Wenn es brennt</b>Was im Ernstfall zu tun ist – Schritt für Schritt.</span></a>
+        <span><b>Wenn es brennt</b>Was im Ernstfall zu tun ist.</span></a>
     </div>
-    <p class="center"><a class="btn btn-ghost" href="{AMAZON_EB}">Längere Leseprobe bei Amazon ↗</a></p>
-  </section>
-
-  <section class="s" id="kapitel">
-    <p class="eyebrow">Inhalt</p>
-    <h2>Sechs Teile, 17 Kapitel, ein Weg.</h2>
-    <div class="toc">
-      <div class="part"><span class="no">Teil I</span><h3>Warum: Kindheit zwischen Bildschirm und Klassenzimmer</h3>
-        <ol start="1"><li>Die Medienwelt der 6- bis 12-Jährigen</li><li>Was Kinder in welchem Alter verstehen</li>
-        <li>Warum Medienbildung in der Grundschule beginnen muss</li></ol></div>
-      <div class="part"><span class="no">Teil II</span><h3>Die große Debatte: Verbieten oder befähigen?</h3>
-        <ol start="4"><li>Was die Forschung wirklich sagt</li><li>Handy in der Schule: Ein Kontinent experimentiert</li>
-        <li>Social-Media-Altersgrenzen weltweit</li><li>Andere Wege: Finnland, Schweden, Estland</li></ol></div>
-      <div class="part"><span class="no">Teil III</span><h3>Wer: Alle tragen Verantwortung</h3>
-        <ol start="8"><li>Medienbildung in Deutschland: Der Rahmen</li><li>Die Akteure</li></ol></div>
-      <div class="part"><span class="no">Teil IV</span><h3>Wie in der Schule</h3>
-        <ol start="10"><li>Didaktische Grundsätze</li><li>Der Methodenkoffer für die Grundschule</li>
-        <li>Die Themen, kindgerecht erklärt</li><li>Zwölf Projekte zum Nachmachen</li></ol></div>
-      <div class="part"><span class="no">Teil V</span><h3>Wie zu Hause und gemeinsam</h3>
-        <ol start="14"><li>Medienerziehung in der Familie</li><li>Schule und Eltern gemeinsam</li></ol></div>
-      <div class="part"><span class="no">Teil VI</span><h3>Hilfe und Orientierung</h3>
-        <ol start="16"><li>Wenn es brennt</li><li>Wegweiser: Websites und Anlaufstellen</li></ol></div>
-    </div>
-    <p class="toc-note">Dazu: Glossar, drei Kopiervorlagen und ein Quellenverzeichnis mit 111 Einträgen.</p>
-  </section>
-
-  <section class="s" id="quellen">
-    <div class="split">
-      <div>
-        <p class="eyebrow">Worauf es sich stützt</p>
-        <h2>111 Quellen. Belegt statt behauptet.</h2>
-      </div>
-      <div class="prose">
-        <p class="big">Die Zahlen im Buch sind mit ihren Quellen belegt. Im Anhang stehen alle
-        101 Studien, Berichte und Artikel und 10 Gesetzestexte – Stand Oktober 2026.</p>
-        <p>Darunter:</p>
-        <ul class="srcs">
-          <li>KIM-Studie 2024</li><li>JIM-Studie 2025</li><li>Bitkom</li>
-          <li>WHO Europa</li><li>OECD</li><li>The Lancet</li><li>Nature</li><li>The BMJ</li>
-          <li>Kultusministerkonferenz</li><li>Leitlinie der DGKJ</li>
-          <li>UN-Kinderrechtsausschuss</li><li>Bündnis gegen Cybermobbing</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="s" id="leseprobe">
-    <figure class="excerpt">
-      <blockquote>Ein Buch, das keine Angst macht, sondern Mut. Denn Wissen gibt Sicherheit.</blockquote>
-      <figcaption>Aus dem Vorwort</figcaption>
-      <div class="acts">
-        <a class="btn btn-ghost" href="{AMAZON_EB}">Leseprobe bei Amazon ↗</a>
-      </div>
-    </figure>
-    <p class="eyebrow quotes-label">Sätze aus dem Buch</p>
-    <div class="quotes">
-      <blockquote class="quote"><p>Ein Kind, das an Zauberei glaubt, ist nicht naiv, sondern sieben.</p><cite>Kapitel 2</cite></blockquote>
-      <blockquote class="quote"><p>Eine Regel, die ein Erstklässler wiedergeben kann, ist eine gute Regel.</p><cite>Kapitel 5</cite></blockquote>
-      <blockquote class="quote"><p>Ein Kind, das ein Tablet flink entsperren und eine App öffnen kann, ist noch nicht medienkompetent.</p><cite>Kapitel 10</cite></blockquote>
-      <blockquote class="quote"><p>Kinder, die sich kontrolliert fühlen, suchen Wege, die Kontrolle zu umgehen.</p><cite>Kapitel 14</cite></blockquote>
-    </div>
+    <p class="pages-more"><a class="textlink" href="{AMAZON_EB}">Längere Leseprobe bei Amazon ↗</a></p>
   </section>
 
   <section class="s" id="autor">
@@ -358,41 +239,13 @@ START = f"""
       <img class="portrait" src="assets/img/sebastian-klatt.jpg" width="720" height="900"
         loading="lazy" alt="Sebastian Klatt, Autor von „Verbieten reicht nicht“">
       <div class="prose">
-        <p class="eyebrow">Wer das geschrieben hat</p>
+        <p class="eyebrow">Der Autor</p>
         <h2>Ein Vater, kein Verbotsprediger.</h2>
-        <p class="big">„Der größte Auslöser für dieses Buch ist mein Sohn.“ So beginnt das Vorwort –
-        und so ist es auch entstanden: aus den Fragen eines Vaters, dessen Kind gerade in genau
-        diesem Alter ist.</p>
-        <p>Sebastian Klatt ist Mediengestalter Bild und Ton und arbeitet seit über 20 Jahren in der
-        Medienproduktion. Er weiß, wie Bilder und Clips gemacht werden, die Aufmerksamkeit binden
-        sollen. Im Förderverein der Grundschule seines Sohnes erlebt er, wie Eltern und Lehrkräfte
-        um die richtigen Regeln ringen. Er lebt in Berlin.</p>
+        <p class="big">„Der größte Auslöser für dieses Buch ist mein Sohn.“ So beginnt das Vorwort.</p>
+        <p>Sebastian Klatt ist Mediengestalter und arbeitet seit über 20 Jahren in der
+        Medienproduktion. Im Förderverein der Grundschule seines Sohnes erlebt er, wie Eltern und
+        Lehrkräfte um die richtigen Regeln ringen. Er lebt in Berlin.</p>
         <p><a class="textlink" href="/ueber-mich/">Mehr über den Autor →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="s" id="fuer-wen">
-    <p class="eyebrow">Ehrlich gesagt</p>
-    <h2>Für wen dieses Buch ist – und für wen nicht.</h2>
-    <div class="fit">
-      <div class="yes">
-        <h3>Das Buch ist für Sie, wenn …</h3>
-        <ul>
-          <li>Ihr Kind zwischen 6 und 12 ist und das erste Smartphone näher rückt.</li>
-          <li>Sie in der Grundschule unterrichten oder eine Klasse leiten.</li>
-          <li>Sie in Elternvertretung oder Förderverein über eine Handyregel mitreden.</li>
-          <li>Sie Gründe wollen statt Bauchgefühl.</li>
-        </ul>
-      </div>
-      <div class="no">
-        <h3>Eher nicht, wenn …</h3>
-        <ul>
-          <li>Sie ein Plädoyer gegen jede Bildschirmzeit suchen.</li>
-          <li>Sie ein schnelles Patentrezept erwarten.</li>
-          <li>Ihr Kind schon auf eine weiterführende Schule geht – der Schwerpunkt liegt auf der
-          Grundschulzeit.</li>
-        </ul>
       </div>
     </div>
   </section>
@@ -416,7 +269,6 @@ START = f"""
         <ul class="offer-points">
           <li>In Sekunden auf Ihrem Gerät – heute Abend auf dem Sofa, morgen in der Mittagspause.</li>
           <li>Kein Kindle nötig: Die kostenlose Kindle-App läuft auf Smartphone, Tablet und Computer.</li>
-          <li>Schriftgröße und Helligkeit stellen Sie selbst ein.</li>
         </ul>
         <div class="acts">
           <a class="btn btn-accent btn-lg" href="{AMAZON_EB}">Bei Amazon kaufen</a>
@@ -425,79 +277,67 @@ START = f"""
         <p class="note">Kauf und Lieferung laufen über Amazon.</p>
       </div>
     </div>
-    <div class="cards cards-2">
-      <div class="card">
-        <p class="kicker">Taschenbuch</p>
-        <div class="p soon-p">In Kürze</div>
-        <p>200 Seiten, 15 × 21 cm. Mit den Kopiervorlagen zum Kopieren für Familie und Schule.</p>
-        <div class="acts"><a class="btn btn-ghost" href="{NOTIFY}">Bescheid geben lassen</a></div>
-        <span class="note">ISBN 9798165446795</span>
-      </div>
-      <div class="card">
-        <p class="kicker">Für Schule und Verein</p>
-        <div class="p">Vortrag</div>
-        <p>Ein Abend für Elternvertretung, Förderverein oder Kollegium.</p>
-        <div class="acts"><a class="btn btn-dark" href="/vortraege/">Mehr erfahren</a></div>
-        <span class="note">Berlin und Umgebung</span>
-      </div>
+    <div class="aside-row">
+      <p><b>Taschenbuch:</b> erscheint in Kürze, 200 Seiten, 15 × 21 cm.</p>
+      <a class="textlink" href="{NOTIFY}">Bescheid geben lassen →</a>
     </div>
-    <p class="cards-note">Sammelbestellung für Schule oder Förderverein? Schreiben Sie an {MAIL}.</p>
-  </section>
-
-  <section class="s" id="stimmen">
-    <div class="voices">
-      <div>
-        <p class="eyebrow">Leserstimmen</p>
-        <h2>Ihre ehrliche Meinung zählt.</h2>
-        <p>Das Buch ist gerade erst erschienen. Leserstimmen sammle ich hier, sobald es sie gibt –
-        erfundene wird es auf dieser Seite nicht geben. Wenn Sie das Buch gelesen haben, hilft eine
-        kurze, ehrliche Rezension anderen Eltern und Lehrkräften bei der Entscheidung.</p>
-      </div>
-      <div class="acts">
-        <a class="btn btn-dark" href="{REVIEW}">Rezension bei Amazon schreiben ↗</a>
-        <a class="btn btn-ghost" href="{FEEDBACK}">Mir direkt schreiben</a>
-      </div>
+    <div class="aside-row">
+      <p><b>Schon gelesen?</b> Eine ehrliche Rezension hilft anderen Eltern bei der Entscheidung.</p>
+      <a class="textlink" href="{REVIEW}">Rezension bei Amazon ↗</a>
     </div>
   </section>
 
   <section class="s" id="fragen">
-    <p class="eyebrow">Häufige Fragen</p>
-    <h2>Bevor Sie bestellen.</h2>
+    <p class="eyebrow">Gut zu wissen</p>
+    <h2>Häufige Fragen.</h2>
     <div class="faq">
-      <details><summary>Für welches Alter ist das Buch gedacht?</summary>
-        <p>Für Kinder im Grundschulalter, also etwa zwischen 6 und 12 Jahren. In Berlin dauert die
-        Grundschule sechs Jahre, deshalb reicht der Blick bis zur sechsten Klasse.</p></details>
+      <details><summary>Was steht im Buch?</summary>
+        <div class="ans">
+          <p>17 Kapitel in sechs Teilen, dazu ein Glossar, drei Kopiervorlagen und ein
+          Quellenverzeichnis.</p>
+          <dl class="toc-mini">
+            <dt>Teil I · Warum</dt><dd>Die Medienwelt der 6- bis 12-Jährigen · Was Kinder in welchem
+            Alter verstehen · Warum Medienbildung in der Grundschule beginnen muss</dd>
+            <dt>Teil II · Verbieten oder befähigen?</dt><dd>Was die Forschung wirklich sagt · Handy in
+            der Schule: Ein Kontinent experimentiert · Social-Media-Altersgrenzen weltweit · Andere
+            Wege: Finnland, Schweden, Estland</dd>
+            <dt>Teil III · Wer</dt><dd>Medienbildung in Deutschland: Der Rahmen · Die Akteure</dd>
+            <dt>Teil IV · Wie in der Schule</dt><dd>Didaktische Grundsätze · Der Methodenkoffer für
+            die Grundschule · Die Themen, kindgerecht erklärt · Zwölf Projekte zum Nachmachen</dd>
+            <dt>Teil V · Wie zu Hause</dt><dd>Medienerziehung in der Familie · Schule und Eltern
+            gemeinsam</dd>
+            <dt>Teil VI · Hilfe</dt><dd>Wenn es brennt · Wegweiser: Websites und Anlaufstellen</dd>
+          </dl>
+        </div></details>
+      <details><summary>Für wen ist das Buch – und für wen nicht?</summary>
+        <div class="ans"><p>Für Eltern von Kindern zwischen 6 und 12, für Lehrkräfte an der
+        Grundschule und für alle, die in Elternvertretung oder Förderverein über eine Handyregel
+        mitreden. Weniger passend ist es, wenn Sie ein Plädoyer gegen jede Bildschirmzeit oder ein
+        schnelles Patentrezept suchen – oder wenn Ihr Kind schon auf eine weiterführende Schule
+        geht.</p></div></details>
       <details><summary>Ist das ein Buch gegen Handys?</summary>
-        <p>Nein. Verbote können sinnvoll sein und Grundschulkindern Zeit geben. Das Buch zeigt, was
-        sie leisten, wo sie aufhören zu wirken – und wie aus einem Verbot Begleitung wird.</p></details>
+        <div class="ans"><p>Nein. Verbote können sinnvoll sein und Grundschulkindern Zeit geben.
+        Das Buch zeigt, was sie leisten, wo sie aufhören zu wirken – und wie aus einem Verbot
+        Begleitung wird.</p></div></details>
+      <details><summary>Worauf stützt sich das Buch?</summary>
+        <div class="ans"><p>Auf 111 Quellen, Stand Oktober 2026: 101 Studien, Berichte und Artikel
+        sowie 10 Gesetzestexte. Darunter die KIM- und die JIM-Studie, Bitkom, WHO Europa, OECD,
+        The Lancet, Nature, The BMJ, die Kultusministerkonferenz und die Leitlinie der
+        DGKJ.</p></div></details>
       <details><summary>Gilt das auch außerhalb von Berlin?</summary>
-        <p>Ja. Das Buch vergleicht alle 16 Bundesländer. Berlin ist Beispiel, nicht Maßstab: Die
-        Methoden und Projekte sind an kein Bundesland gebunden.</p></details>
+        <div class="ans"><p>Ja. Das Buch vergleicht alle 16 Bundesländer. Berlin ist Beispiel,
+        nicht Maßstab: Die Methoden und Projekte sind an kein Bundesland gebunden.</p></div></details>
       <details><summary>Brauche ich technisches Vorwissen?</summary>
-        <p>Nein. Kapitel 12 erklärt Werbung, Datenschutz und künstliche Intelligenz so, dass Sie es
-        einem Grundschulkind weitergeben können.</p></details>
+        <div class="ans"><p>Nein. Kapitel 12 erklärt Werbung, Datenschutz und künstliche
+        Intelligenz so, dass Sie es einem Grundschulkind weitergeben können.</p></div></details>
       <details><summary>E-Book oder Taschenbuch?</summary>
-        <p>Das E-Book gibt es jetzt sofort bei Amazon. Das Taschenbuch erscheint in Kürze und lohnt
-        sich, wenn Sie die Kopiervorlagen aus dem Anhang kopieren möchten. Die drei Vorlagen gibt es
-        schon jetzt <a href="/material/">kostenlos als PDF</a>.</p></details>
-      <details><summary>Wie aktuell ist das Buch?</summary>
-        <p>Stand der Recherche ist Oktober 2026. Das Quellenverzeichnis nennt 111 Studien, Berichte
-        und Gesetzestexte, darunter KIM- und JIM-Studie, WHO und Kultusministerkonferenz.</p></details>
+        <div class="ans"><p>Das E-Book gibt es jetzt sofort bei Amazon. Das Taschenbuch erscheint
+        in Kürze und lohnt sich, wenn Sie die Kopiervorlagen aus dem Anhang kopieren möchten. Die
+        drei Vorlagen gibt es schon jetzt <a href="/material/">kostenlos als PDF</a>.</p></div></details>
       <details><summary>Kommen Sie auch an unsere Schule?</summary>
-        <p>Ja, für Elternabende, Fördervereine und Kollegien in Berlin und Umgebung.
-        <a href="/vortraege/">Mehr zu den Vorträgen</a>.</p></details>
-    </div>
-  </section>
-
-  <section class="s" id="kontakt">
-    <div class="contact">
-      <div>
-        <h2>Vortrag, Elternabend oder Interview?</h2>
-        <p>Für Veranstaltungen an Schulen, Presseanfragen und Rezensionsexemplare.</p>
-      </div>
-      <div class="mail">
-        <code>{MAIL}</code>
-      </div>
+        <div class="ans"><p>Ja, für Elternabende, Fördervereine und Kollegien in Berlin und
+        Umgebung: <a href="/vortraege/">mehr zu den Vorträgen</a>. Für Sammelbestellungen,
+        Presse und Rezensionsexemplare schreiben Sie an {MAIL}.</p></div></details>
     </div>
   </section>
 
