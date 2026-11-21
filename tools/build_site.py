@@ -66,11 +66,10 @@ MAIL = ('<a href="mailto:kontakt@verbietenreichtnicht.de">'
         'kontakt@verbietenreichtnicht.de</a>')
 PREIS_EB = "19,95 €"
 # Kein Platzhalter-Markup: dieser Wert landet in einem href-Attribut.
-AMAZON = "#"
+AMAZON = "https://www.amazon.de/dp/B0HSJPJ6L2"
+PREIS_TB = "21,35 €"
 AMAZON_EB = "https://www.amazon.de/dp/B0HSCFY8J3"
 REVIEW = AMAZON_EB + "#customerReviews"
-NOTIFY = ("mailto:kontakt@verbietenreichtnicht.de?subject="
-          "Bitte%20Bescheid%20geben%2C%20wenn%20das%20Taschenbuch%20erscheint")
 FEEDBACK = "mailto:kontakt@verbietenreichtnicht.de?subject=R%C3%BCckmeldung%20zum%20Buch"
 
 
@@ -90,7 +89,9 @@ BOOK_LD = '<script type="application/ld+json">' + _json.dumps({
          "offers": {"@type": "Offer", "price": "19.95", "priceCurrency": "EUR",
                     "availability": "https://schema.org/InStock", "url": AMAZON_EB}},
         {"@type": "Book", "bookFormat": "https://schema.org/Paperback", "isbn": "9798165446795",
-         "numberOfPages": 200},
+         "numberOfPages": 200, "url": AMAZON,
+         "offers": {"@type": "Offer", "price": "21.35", "priceCurrency": "EUR",
+                    "availability": "https://schema.org/InStock", "url": AMAZON}},
     ],
 }, ensure_ascii=False) + '</script>\n'
 
@@ -278,8 +279,8 @@ START = f"""
       </div>
     </div>
     <div class="aside-row">
-      <p><b>Taschenbuch:</b> erscheint in Kürze, 200 Seiten, 15 × 21 cm.</p>
-      <a class="textlink" href="{NOTIFY}">Bescheid geben lassen →</a>
+      <p><b>Lieber auf Papier?</b> Das Taschenbuch: 200 Seiten, 15 × 21 cm, {PREIS_TB}.</p>
+      <a class="textlink" href="{AMAZON}">Taschenbuch bei Amazon ↗</a>
     </div>
     <div class="aside-row">
       <p><b>Schon gelesen?</b> Eine ehrliche Rezension hilft anderen Eltern bei der Entscheidung.</p>
@@ -331,9 +332,10 @@ START = f"""
         <div class="ans"><p>Nein. Kapitel 12 erklärt Werbung, Datenschutz und künstliche
         Intelligenz so, dass Sie es einem Grundschulkind weitergeben können.</p></div></details>
       <details><summary>E-Book oder Taschenbuch?</summary>
-        <div class="ans"><p>Das E-Book gibt es jetzt sofort bei Amazon. Das Taschenbuch erscheint
-        in Kürze und lohnt sich, wenn Sie die Kopiervorlagen aus dem Anhang kopieren möchten. Die
-        drei Vorlagen gibt es schon jetzt <a href="/material/">kostenlos als PDF</a>.</p></div></details>
+        <div class="ans"><p>Beide gibt es bei Amazon: das <a href="{AMAZON_EB}">E-Book für {PREIS_EB}</a>,
+        sofort auf dem Gerät, und das <a href="{AMAZON}">Taschenbuch für {PREIS_TB}</a>. Das
+        Taschenbuch lohnt sich, wenn Sie mit Stift arbeiten oder es im Kollegium weitergeben möchten.
+        Die drei Kopiervorlagen gibt es zusätzlich <a href="/material/">kostenlos als PDF</a>.</p></div></details>
       <details><summary>Kommen Sie auch an unsere Schule?</summary>
         <div class="ans"><p>Ja, für Elternabende, Fördervereine und Kollegien in Berlin und
         Umgebung: <a href="/vortraege/">mehr zu den Vorträgen</a>. Für Sammelbestellungen,
